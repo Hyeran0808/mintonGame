@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="test">
+        <item>토너먼트</item>
+        <item>리그전</item>
+    </string-array>
+</resources>
