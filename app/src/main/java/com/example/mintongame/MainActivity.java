@@ -2,6 +2,7 @@ package com.example.mintongame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -12,6 +13,8 @@ import android.widget.ListView;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
+
+import javax.xml.transform.Result;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -132,7 +135,9 @@ public class MainActivity extends AppCompatActivity {
         btn_result.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(MainActivity.this, ResultActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
