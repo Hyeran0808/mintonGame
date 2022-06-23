@@ -21,7 +21,11 @@ public class MainActivity extends AppCompatActivity {
     private Spinner leagueSpin, genderSpin, ageSpin, gradeSpin;
     int league, gender, age, grade;
     Button btn_add, btn_result;
-    static ArrayList<String> arrayList = new ArrayList<String>();
+    static ArrayList<Dataset> arrayList = new ArrayList<Dataset>();
+    ArrayList<String> name = new ArrayList<String>();
+    ArrayList<String> gen = new ArrayList<String>();
+    ArrayList<String> age = new ArrayList<String>();
+    ArrayList<String> grade = new ArrayList<String>();
     ListView listView;
     EditText edtName;
     String str_gen, str_age, str_grade;
@@ -127,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String[] info = {edtName.getText().toString(), str_gen, str_age, str_grade};
                 String Result = setTextLength(info[0],10) + setTextLength(info[1],10) + setTextLength(info[2],10) + setTextLength(info[3],10);
-                arrayList.add(Result);
+                arrayList.add(new Dataset(name.get(info[0]));
                 adapter.notifyDataSetChanged();
             }
         });
@@ -135,6 +139,10 @@ public class MainActivity extends AppCompatActivity {
         btn_result.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                System.out.println("확인");
+                for (int index = 0; index < arrayList.size(); index++) {
+                    System.out.println(arrayList.get(index));
+                }
                 Intent intent = new Intent(MainActivity.this, ResultActivity.class);
                 startActivity(intent);
                 finish();
@@ -161,5 +169,45 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         return text;
+    }
+}
+
+class Dataset{
+    String name, gen, age, grade;
+    public Dataset(){
+
+    }
+    public Dataset(String str_name, String str_gen, String str_age, String str_grade){
+        //return
+        name = str_name;
+        gen = str_gen;
+        age = str_age;
+        grade = str_grade;
+    }
+    //getter
+    public String getName(){
+        return name;
+    }
+    public String getGen(){
+        return gen;
+    }
+    public String getAge(){
+        return age;
+    }
+    public String getGrade(){
+        return grade;
+    }
+    //setter
+    public void setName(){
+        this.name = name;
+    }
+    public void setGen(){
+        this.gen = gen;
+    }
+    public void setAge(){
+        this.age = age;
+    }
+    public void setGrade(){
+        this.grade = grade;
     }
 }
