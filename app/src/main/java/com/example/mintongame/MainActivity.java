@@ -21,11 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private Spinner leagueSpin, genderSpin, ageSpin, gradeSpin;
     int league, gender, age, grade;
     Button btn_add, btn_result;
-    static ArrayList<Dataset> arrayList = new ArrayList<Dataset>();
-    ArrayList<String> name = new ArrayList<String>();
-    ArrayList<String> gen = new ArrayList<String>();
-    ArrayList<String> age = new ArrayList<String>();
-    ArrayList<String> grade = new ArrayList<String>();
+    ArrayList<Team> arrayList = new ArrayList<Team>();
     ListView listView;
     EditText edtName;
     String str_gen, str_age, str_grade;
